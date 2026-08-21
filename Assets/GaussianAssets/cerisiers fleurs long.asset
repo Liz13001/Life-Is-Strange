@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b71fae31e6c7d438e8566dc713e666, type: 3}
+  m_Name: cerisiers fleurs long
+  m_EditorClassIdentifier: 
+  m_FormatVersion: 20231020
+  m_SplatCount: 1517012
+  m_BoundsMin: {x: -24.683794, y: -25.914177, z: -24.591457}
+  m_BoundsMax: {x: 26.383314, y: 0.9317138, z: 26.569096}
+  m_DataHash:
+    serializedVersion: 2
+    Hash: c5fce3733413f2545ad717fc3e1c3e41
+  m_PosFormat: 0
+  m_ScaleFormat: 0
+  m_SHFormat: 0
+  m_ColorFormat: 0
+  m_PosData: {fileID: 4900000, guid: 9532ad24fd69b1e40850764f08254894, type: 3}
+  m_ColorData: {fileID: 4900000, guid: 46995e418f879584bac318358def6473, type: 3}
+  m_OtherData: {fileID: 4900000, guid: 1439cb35d0657be438b3acb1c3aa176b, type: 3}
+  m_SHData: {fileID: 4900000, guid: e87834026d72f604a8b962c05806c76d, type: 3}
+  m_ChunkData: {fileID: 0}
+  m_Cameras: []

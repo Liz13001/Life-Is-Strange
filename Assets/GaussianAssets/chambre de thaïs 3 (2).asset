@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b71fae31e6c7d438e8566dc713e666, type: 3}
+  m_Name: "chambre de tha\xEFs 3 (2)"
+  m_EditorClassIdentifier: 
+  m_FormatVersion: 20231020
+  m_SplatCount: 1438292
+  m_BoundsMin: {x: -8.34476, y: -9.109898, z: -8.521554}
+  m_BoundsMax: {x: 9.462707, y: 0.29112375, z: 8.405289}
+  m_DataHash:
+    serializedVersion: 2
+    Hash: 46f499182dae6c3c23caa675002422db
+  m_PosFormat: 0
+  m_ScaleFormat: 0
+  m_SHFormat: 0
+  m_ColorFormat: 0
+  m_PosData: {fileID: 4900000, guid: cd8c0790cce40c24996a53d6fd02cc7d, type: 3}
+  m_ColorData: {fileID: 4900000, guid: 0fb8fb1530945024e9b7324719de41d8, type: 3}
+  m_OtherData: {fileID: 4900000, guid: 3b793976dc96de4478f44c2216ec91c7, type: 3}
+  m_SHData: {fileID: 4900000, guid: 4cbb57f5423ff8f4ebece10e22b24037, type: 3}
+  m_ChunkData: {fileID: 0}
+  m_Cameras: []

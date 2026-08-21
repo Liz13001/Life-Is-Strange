@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b71fae31e6c7d438e8566dc713e666, type: 3}
+  m_Name: cimetiere good one_edited
+  m_EditorClassIdentifier: 
+  m_FormatVersion: 20231020
+  m_SplatCount: 999461
+  m_BoundsMin: {x: -6.735406, y: -2.0341108, z: -5.6517825}
+  m_BoundsMax: {x: 5.9211626, y: 0.035549402, z: 5.5653224}
+  m_DataHash:
+    serializedVersion: 2
+    Hash: ad5b594cab73d119b1a57cfb08abdf4d
+  m_PosFormat: 0
+  m_ScaleFormat: 0
+  m_SHFormat: 0
+  m_ColorFormat: 0
+  m_PosData: {fileID: 4900000, guid: 4c47da8e697d51c4bbcdae5417dd61a4, type: 3}
+  m_ColorData: {fileID: 4900000, guid: 223869a79d88e774baad5a25fbe58a30, type: 3}
+  m_OtherData: {fileID: 4900000, guid: bb46217982b53ed4caf2e9b586dc3e2f, type: 3}
+  m_SHData: {fileID: 4900000, guid: bf877736fb105734b9cae4075f4d8eeb, type: 3}
+  m_ChunkData: {fileID: 0}
+  m_Cameras: []

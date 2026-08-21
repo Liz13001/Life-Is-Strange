@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b71fae31e6c7d438e8566dc713e666, type: 3}
+  m_Name: planetarium 2
+  m_EditorClassIdentifier: 
+  m_FormatVersion: 20231020
+  m_SplatCount: 1077901
+  m_BoundsMin: {x: -9.306541, y: -5.106811, z: -13.245294}
+  m_BoundsMax: {x: 11.669701, y: 0.40719992, z: 10.04083}
+  m_DataHash:
+    serializedVersion: 2
+    Hash: 814231afa53f272f7a01b144724c1c25
+  m_PosFormat: 0
+  m_ScaleFormat: 0
+  m_SHFormat: 0
+  m_ColorFormat: 0
+  m_PosData: {fileID: 4900000, guid: b3bfbe843c3460240bc488676ee72184, type: 3}
+  m_ColorData: {fileID: 4900000, guid: 6280c362d07e8c04aaeddf17a2718070, type: 3}
+  m_OtherData: {fileID: 4900000, guid: ca043f0f4440851489b6e05fb20d12b1, type: 3}
+  m_SHData: {fileID: 4900000, guid: cc1688df5d26d6644b97906904bbfb5d, type: 3}
+  m_ChunkData: {fileID: 0}
+  m_Cameras: []
