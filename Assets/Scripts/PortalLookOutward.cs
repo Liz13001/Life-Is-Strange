@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PortalLookOutward : MonoBehaviour
 {
-    [Header("Scene")]
+    [Header("Ziel")]
     public string targetSceneName = "Zimmer";
+    public Transform pullPoint; // wohin der Player springt (z.B. Punkt im Zielraum-Bereich)
 
     [Header("Circle Center")]
     public Transform circleCenter;
@@ -14,56 +15,141 @@ public class PortalLookOutward : MonoBehaviour
     [Range(-1f, 1f)]
     public float facingThreshold = 0.5f;
 
-    [Header("Zoom Threshold")]
-    public float triggerFOV = 25f;
+    [Header("Jump Settings")]
+    public KeyCode jumpKey = KeyCode.Space;
+    public float jumpDuration = 1f;
+    public float jumpArcHeight = 3f;
+    public float rotateSpeed = 5f;
 
     [Header("Fade")]
     public float fadeDuration = 0.8f;
 
+    [Header("UI")]
+    public GameObject promptUI;
+
+    bool isPlayerNear = false;
+    bool isPortalJumping = false;
     bool _transitioning;
     float _fadeAlpha;
     Texture2D _black;
 
-    FirstPersonController _fpc;
-    FollowTarget _followTarget;
+    Transform playerTransform;
+    FollowTarget followTarget;
+    FirstPersonController fpc;
+
+    Vector3 jumpStartPos;
+    float jumpTimer;
+
+    private bool GetJumpInput()
+    {
+        if (Input.GetKeyDown(jumpKey)) return true;
+
+        string[] joysticks = Input.GetJoystickNames();
+        foreach (string j in joysticks)
+        {
+            if (string.IsNullOrEmpty(j)) continue;
+            string jLower = j.ToLower();
+            if (jLower.Contains("xbox") || jLower.Contains("xinput"))
+                return Input.GetKeyDown(KeyCode.JoystickButton0);
+            if (jLower.Contains("ps4") || jLower.Contains("wireless"))
+                return Input.GetKeyDown(KeyCode.JoystickButton1);
+        }
+        return false;
+    }
 
     void Start()
     {
-        _fpc = FindFirstObjectByType<FirstPersonController>();
-        if (_fpc == null)
-            Debug.LogError("[PortalLookOutward] FirstPersonController not found!");
+        if (promptUI != null) promptUI.SetActive(false);
+    }
 
-        _followTarget = _fpc != null ? _fpc.GetComponent<FollowTarget>() : null;
+    void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        playerTransform = other.transform;
+        followTarget = other.GetComponent<FollowTarget>();
+        fpc = other.GetComponent<FirstPersonController>();
+
+        isPlayerNear = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (other.transform != playerTransform) return;
+
+        isPlayerNear = false;
+        if (promptUI != null) promptUI.SetActive(false);
     }
 
     void Update()
     {
         if (_transitioning) return;
-        if (_fpc == null) return;
-        if (circleCenter == null) return;
+        if (isPortalJumping) { HandlePortalJump(); return; }
 
-        Vector3 outwardDir = (_fpc.playerCamera.transform.position - circleCenter.position).normalized;
+        if (!isPlayerNear || playerTransform == null || fpc == null || circleCenter == null)
+        {
+            if (promptUI != null) promptUI.SetActive(false);
+            return;
+        }
+
+        Vector3 outwardDir = (fpc.playerCamera.transform.position - circleCenter.position).normalized;
         outwardDir.y = 0f;
 
-        Vector3 camForward = _fpc.playerCamera.transform.forward;
+        Vector3 camForward = fpc.playerCamera.transform.forward;
         camForward.y = 0f;
         camForward.Normalize();
 
         float dot = Vector3.Dot(camForward, outwardDir);
         bool isLookingOutward = dot >= facingThreshold;
-        bool isZoomed = _fpc.playerCamera.fieldOfView <= triggerFOV;
 
-        if (isLookingOutward && isZoomed)
+        if (promptUI != null) promptUI.SetActive(isLookingOutward);
+
+        if (isLookingOutward && GetJumpInput())
+            StartPortalJump();
+    }
+
+    void StartPortalJump()
+    {
+        isPortalJumping = true;
+        jumpTimer = 0f;
+        jumpStartPos = playerTransform.position;
+
+        if (promptUI != null) promptUI.SetActive(false);
+        if (followTarget != null) followTarget.enabled = false;
+        fpc.playerCanMove = false;
+    }
+
+    void HandlePortalJump()
+    {
+        Transform target = pullPoint != null ? pullPoint : transform;
+
+        jumpTimer += Time.deltaTime;
+        float t = Mathf.Clamp01(jumpTimer / jumpDuration);
+
+        Vector3 horizontalPos = Vector3.Lerp(jumpStartPos, target.position, t);
+        float arc = Mathf.Sin(t * Mathf.PI) * jumpArcHeight;
+        horizontalPos.y += arc;
+
+        playerTransform.position = horizontalPos;
+
+        Vector3 toTarget = target.position - playerTransform.position;
+        toTarget.y = 0f;
+        if (toTarget != Vector3.zero)
+        {
+            Quaternion targetRot = Quaternion.LookRotation(toTarget.normalized, Vector3.up);
+            playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, targetRot, rotateSpeed * Time.deltaTime);
+        }
+
+        if (t >= 1f)
             StartCoroutine(FadeAndLoad());
     }
 
     IEnumerator FadeAndLoad()
     {
         _transitioning = true;
-        _fpc.playerCanMove = false;
-        _fpc.cameraCanMove = false;
-
-        if (_followTarget != null) _followTarget.enabled = false;
+        isPortalJumping = false;
+        fpc.cameraCanMove = false;
 
         float t = 0f;
         while (t < fadeDuration)
