@@ -16,9 +16,10 @@ public class PortalLookOutward : MonoBehaviour
 
     [Header("Jump Settings")]
     public KeyCode jumpKey = KeyCode.Space;
-    public float outwardSpeed = 4f;
-    public float jumpPower = 6f;
+    public float outwardSpeed = 24f;
+    public float jumpPower = 12f;
     public float gravity = 15f;
+    public float horizontalDamping = 2f;
 
     [Header("Ground Check")]
     public float groundCheckDistance = 1.2f;
@@ -123,8 +124,6 @@ public class PortalLookOutward : MonoBehaviour
         if (promptUI != null) promptUI.SetActive(false);
         if (followTarget != null) followTarget.enabled = false;
 
-        // Rigidbody-basierte Bewegung deaktivieren, falls FPC per Rigidbody läuft,
-        // damit wir die Fall-Bewegung hier manuell per Transform steuern
         fpc.playerCanMove = false;
         if (playerRb != null)
         {
@@ -142,9 +141,8 @@ public class PortalLookOutward : MonoBehaviour
         fallVelocity.y -= gravity * Time.deltaTime;
         playerTransform.position += fallVelocity * Time.deltaTime;
 
-        // horizontale Bewegung dämpfen, damit der Player nicht endlos weiterfliegt
-        fallVelocity.x = Mathf.MoveTowards(fallVelocity.x, 0f, outwardSpeed * Time.deltaTime);
-        fallVelocity.z = Mathf.MoveTowards(fallVelocity.z, 0f, outwardSpeed * Time.deltaTime);
+        fallVelocity.x = Mathf.MoveTowards(fallVelocity.x, 0f, horizontalDamping * Time.deltaTime);
+        fallVelocity.z = Mathf.MoveTowards(fallVelocity.z, 0f, horizontalDamping * Time.deltaTime);
 
         if (airTimer < minAirTime) return;
 

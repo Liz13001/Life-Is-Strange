@@ -643,7 +643,7 @@ RectTransform:
   m_GameObject: {fileID: 447837076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1801770140}
@@ -1179,11 +1179,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1025613246
@@ -1770,13 +1770,14 @@ MonoBehaviour:
   circleCenter: {fileID: 1679456520}
   facingThreshold: 0.5
   jumpKey: 32
-  outwardSpeed: 4
-  jumpPower: 6
+  outwardSpeed: 24
+  jumpPower: 12
   gravity: 15
+  horizontalDamping: 2
   groundCheckDistance: 1.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   minAirTime: 0.2
   fadeDuration: 0.8
   promptUI: {fileID: 0}
@@ -2804,6 +2805,10 @@ PrefabInstance:
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: crosshair
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: jumpPower
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: sprintFOV
