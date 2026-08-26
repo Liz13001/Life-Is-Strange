@@ -104,6 +104,8 @@ public class ClaxonPortalJump : MonoBehaviour
 
         if (audioSource != null && claxonSound != null)
             audioSource.PlayOneShot(claxonSound);
+
+        GameState.Instance.npcWoken = true;
     }
 
     void HandlePortalJump()

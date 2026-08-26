@@ -11,7 +11,15 @@ public class SleepingNPC : MonoBehaviour
 
     private void Start()
     {
+        if (GameState.Instance == null)
+        {
+            Debug.LogWarning("[SleepingNPC] GameState.Instance ist null!");
+            return;
+        }
+
         bool woken = GameState.Instance.npcWoken;
+        Debug.Log($"[SleepingNPC] npcWoken = {woken}");
+
         animator.SetBool(sleepBoolParam, !woken);
 
         if (woken && awakePosition != null)

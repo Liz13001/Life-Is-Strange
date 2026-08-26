@@ -376,78 +376,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &306425015
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 4918451714722057857}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.089
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7958301096379391547, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.158
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_Name
-      value: Hands_idle
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1429496162254274570, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.142
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 716698242}
-  m_SourcePrefab: {fileID: 100100000, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
 --- !u!1001 &530775872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -783,38 +711,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &716698240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-  m_PrefabInstance: {fileID: 306425015}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &716698241 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8840ea894fb11724b977a54937d2e238, type: 3}
-  m_PrefabInstance: {fileID: 306425015}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &716698242
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716698240}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca88a2ba2ce77b845acec2a3b2ed00af, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &840976393
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,9 +894,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d67f7c611329a48b685d1594f3d461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogLines:
+  sleepingDialogLines:
   - The Golem is asleep.
-  - She must be sleeping very deep...
+  - You have to wake him up...
+  awakeDialogLines:
+  - Now she is awake.
+  - The horn woke her up.
   subtitleText: {fileID: 1242462563}
 --- !u!135 &1170503770
 SphereCollider:
@@ -1931,7 +1830,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem Laying Sleeping
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5866666021909216657, guid: 1f71c77f7c1916e4fa9061fbd76bb0c9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1f71c77f7c1916e4fa9061fbd76bb0c9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e8e711a245dc2934d9ad1e686858fe1a, type: 2}
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 1f71c77f7c1916e4fa9061fbd76bb0c9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1941,6 +1849,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f71c77f7c1916e4fa9061fbd76bb0c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1963365777}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f71c77f7c1916e4fa9061fbd76bb0c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963365779}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f71c77f7c1916e4fa9061fbd76bb0c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963365781}
   m_SourcePrefab: {fileID: 100100000, guid: 1f71c77f7c1916e4fa9061fbd76bb0c9, type: 3}
 --- !u!1 &1963365775 stripped
 GameObject:
@@ -1980,9 +1894,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d67f7c611329a48b685d1594f3d461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogLines:
-  - Zzzzzzzz
+  sleepingDialogLines:
+  - Zzzzzzz
+  awakeDialogLines:
+  - I'm awake...
   subtitleText: {fileID: 1242462563}
+--- !u!114 &1963365779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963365775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72e5ca2787ec0d448ef9b0d71dbb573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1963365781}
+  sleepBoolParam: IsAsleep
+  awakePosition: {fileID: 2087109686}
+--- !u!95 &1963365781
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963365775}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91da9b2742646eb4b85fdffa0ef23128, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1981503237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +1982,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Type: 1
   m_Invert: 1
+--- !u!1 &2087109685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087109686}
+  m_Layer: 0
+  m_Name: Awake Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2087109686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087109685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.67, y: 0.556, z: 0.957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2103461529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,7 +2281,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 716698241}
   - {fileID: 4918451714816208387}
   m_Father: {fileID: 4918451714774874116}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2906,3 +2889,4 @@ SceneRoots:
   - {fileID: 672798568}
   - {fileID: 1240935482}
   - {fileID: 596787740}
+  - {fileID: 2087109686}

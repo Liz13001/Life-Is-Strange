@@ -7,6 +7,9 @@ public class GameState : MonoBehaviour
     [Header("NPC Status")]
     public bool npcWoken = false;
 
+    [Header("Level Progress")]
+    public bool hasVisitedLevel2 = false;
+
     void Awake()
     {
         if (Instance == null)
