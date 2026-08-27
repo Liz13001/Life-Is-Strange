@@ -7101,7 +7101,7 @@ PrefabInstance:
     - target: {fileID: 1044062295795058208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: footstepLoop
       value: 
-      objectReference: {fileID: 8300000, guid: 6c1831414987a44f4b598f5fe0d683db, type: 3}
+      objectReference: {fileID: 8300000, guid: 56f9881677522431b920fe5283ca06fd, type: 3}
     - target: {fileID: 3646462052870580491, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_IsActive
       value: 0
