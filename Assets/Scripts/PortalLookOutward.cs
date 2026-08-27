@@ -6,7 +6,6 @@ public class PortalLookOutward : MonoBehaviour
 {
     [Header("Ziel")]
     public string targetSceneName = "Zimmer";
-    public Transform pullPoint; // wohin der Player springt (z.B. Punkt im Zielraum-Bereich)
 
     [Header("Circle Center")]
     public Transform circleCenter;
@@ -17,9 +16,15 @@ public class PortalLookOutward : MonoBehaviour
 
     [Header("Jump Settings")]
     public KeyCode jumpKey = KeyCode.Space;
-    public float jumpDuration = 1f;
-    public float jumpArcHeight = 3f;
-    public float rotateSpeed = 5f;
+    public float outwardSpeed = 24f;
+    public float jumpPower = 12f;
+    public float gravity = 15f;
+    public float horizontalDamping = 2f;
+
+    [Header("Ground Check")]
+    public float groundCheckDistance = 1.2f;
+    public LayerMask groundLayer;
+    public float minAirTime = 0.2f; // verhindert sofortiges "landen" direkt beim Absprung
 
     [Header("Fade")]
     public float fadeDuration = 0.8f;
@@ -28,7 +33,7 @@ public class PortalLookOutward : MonoBehaviour
     public GameObject promptUI;
 
     bool isPlayerNear = false;
-    bool isPortalJumping = false;
+    bool isFalling = false;
     bool _transitioning;
     float _fadeAlpha;
     Texture2D _black;
@@ -36,9 +41,10 @@ public class PortalLookOutward : MonoBehaviour
     Transform playerTransform;
     FollowTarget followTarget;
     FirstPersonController fpc;
+    Rigidbody playerRb;
 
-    Vector3 jumpStartPos;
-    float jumpTimer;
+    Vector3 fallVelocity;
+    float airTimer;
 
     private bool GetJumpInput()
     {
@@ -69,6 +75,7 @@ public class PortalLookOutward : MonoBehaviour
         playerTransform = other.transform;
         followTarget = other.GetComponent<FollowTarget>();
         fpc = other.GetComponent<FirstPersonController>();
+        playerRb = other.GetComponent<Rigidbody>();
 
         isPlayerNear = true;
     }
@@ -85,7 +92,7 @@ public class PortalLookOutward : MonoBehaviour
     void Update()
     {
         if (_transitioning) return;
-        if (isPortalJumping) { HandlePortalJump(); return; }
+        if (isFalling) { HandleFall(); return; }
 
         if (!isPlayerNear || playerTransform == null || fpc == null || circleCenter == null)
         {
@@ -106,49 +113,48 @@ public class PortalLookOutward : MonoBehaviour
         if (promptUI != null) promptUI.SetActive(isLookingOutward);
 
         if (isLookingOutward && GetJumpInput())
-            StartPortalJump();
+            StartFallJump(outwardDir);
     }
 
-    void StartPortalJump()
+    void StartFallJump(Vector3 outwardDir)
     {
-        isPortalJumping = true;
-        jumpTimer = 0f;
-        jumpStartPos = playerTransform.position;
+        isFalling = true;
+        airTimer = 0f;
 
         if (promptUI != null) promptUI.SetActive(false);
         if (followTarget != null) followTarget.enabled = false;
+
         fpc.playerCanMove = false;
-    }
-
-    void HandlePortalJump()
-    {
-        Transform target = pullPoint != null ? pullPoint : transform;
-
-        jumpTimer += Time.deltaTime;
-        float t = Mathf.Clamp01(jumpTimer / jumpDuration);
-
-        Vector3 horizontalPos = Vector3.Lerp(jumpStartPos, target.position, t);
-        float arc = Mathf.Sin(t * Mathf.PI) * jumpArcHeight;
-        horizontalPos.y += arc;
-
-        playerTransform.position = horizontalPos;
-
-        Vector3 toTarget = target.position - playerTransform.position;
-        toTarget.y = 0f;
-        if (toTarget != Vector3.zero)
+        if (playerRb != null)
         {
-            Quaternion targetRot = Quaternion.LookRotation(toTarget.normalized, Vector3.up);
-            playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, targetRot, rotateSpeed * Time.deltaTime);
+            playerRb.linearVelocity = Vector3.zero;
+            playerRb.isKinematic = true;
         }
 
-        if (t >= 1f)
+        fallVelocity = outwardDir * outwardSpeed + Vector3.up * jumpPower;
+    }
+
+    void HandleFall()
+    {
+        airTimer += Time.deltaTime;
+
+        fallVelocity.y -= gravity * Time.deltaTime;
+        playerTransform.position += fallVelocity * Time.deltaTime;
+
+        fallVelocity.x = Mathf.MoveTowards(fallVelocity.x, 0f, horizontalDamping * Time.deltaTime);
+        fallVelocity.z = Mathf.MoveTowards(fallVelocity.z, 0f, horizontalDamping * Time.deltaTime);
+
+        if (airTimer < minAirTime) return;
+
+        bool grounded = Physics.Raycast(playerTransform.position, Vector3.down, groundCheckDistance, groundLayer);
+        if (grounded)
             StartCoroutine(FadeAndLoad());
     }
 
     IEnumerator FadeAndLoad()
     {
         _transitioning = true;
-        isPortalJumping = false;
+        isFalling = false;
         fpc.cameraCanMove = false;
 
         float t = 0f;
