@@ -6,8 +6,11 @@ public class ExtraNPCsActivator : MonoBehaviour
     [SerializeField] private int minLevelsVisited = 5;
     [SerializeField] private string requiredFinalScene = "Splat Installation";
 
-    [Header("Extra NPCs")]
-    [SerializeField] private GameObject[] extraNpcs;
+    [Header("NPCs to Activate (once unlocked)")]
+    [SerializeField] private GameObject[] npcsToActivate;
+
+    [Header("NPCs to Deactivate (once unlocked)")]
+    [SerializeField] private GameObject[] npcsToDeactivate;
 
     void Start()
     {
@@ -15,9 +18,14 @@ public class ExtraNPCsActivator : MonoBehaviour
 
         bool unlocked = GameState.Instance.HasCompletedFullLoop(minLevelsVisited, requiredFinalScene);
 
-        foreach (var npc in extraNpcs)
+        foreach (var npc in npcsToActivate)
         {
             if (npc != null) npc.SetActive(unlocked);
+        }
+
+        foreach (var npc in npcsToDeactivate)
+        {
+            if (npc != null) npc.SetActive(!unlocked);
         }
     }
 }
