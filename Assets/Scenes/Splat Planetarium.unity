@@ -1299,7 +1299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &245865718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,7 +1526,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevelsVisited: 5
   requiredFinalScene: Splat Installation
-  extraNpcs: []
+  extraNpcs:
+  - {fileID: 898340059}
+  - {fileID: 1259130341}
+  - {fileID: 1720599222}
+  - {fileID: 1967432808}
+  - {fileID: 245865717}
 --- !u!1 &278394737
 GameObject:
   m_ObjectHideFlags: 0
@@ -8709,6 +8714,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 968858086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1720599222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a01c10c4f3bb694cab86f9bd4064eb5, type: 3}
+  m_PrefabInstance: {fileID: 661534704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1747949698
 GameObject:
   m_ObjectHideFlags: 0
@@ -9777,6 +9787,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 666618344}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 14ffcf9b1b785284eb53798d81557ee1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14ffcf9b1b785284eb53798d81557ee1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14ffcf9b1b785284eb53798d81557ee1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14ffcf9b1b785284eb53798d81557ee1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -44.23017
       objectReference: {fileID: 0}
@@ -9815,6 +9837,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 14ffcf9b1b785284eb53798d81557ee1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 14ffcf9b1b785284eb53798d81557ee1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 14ffcf9b1b785284eb53798d81557ee1, type: 3}
       propertyPath: m_Name
