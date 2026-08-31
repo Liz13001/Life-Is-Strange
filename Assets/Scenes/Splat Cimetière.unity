@@ -405,20 +405,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 134239577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 1506b9f9b72af8641963f6228133f4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 2079125433}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 0
-  m_Duration: 600
-  m_MaxSpeed: 0.20506094
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.05
+  splineContainer: {fileID: 2079125433}
+  speed: 0.2
+  alignToSplineDirection: 1
+  rotationSpeed: 360
+  loop: 1
+  pauseAtLoopEnd: 0
+  startOffset: 0
+  playOnStart: 1
 --- !u!1 &141550465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,20 +3137,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219570279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 1506b9f9b72af8641963f6228133f4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 1742797839}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 0
-  m_Duration: 600
-  m_MaxSpeed: 0.16152473
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.02
+  splineContainer: {fileID: 1742797839}
+  speed: 0.2
+  alignToSplineDirection: 1
+  rotationSpeed: 360
+  loop: 1
+  pauseAtLoopEnd: 0
+  startOffset: 0
+  playOnStart: 1
 --- !u!1 &1223176460
 GameObject:
   m_ObjectHideFlags: 0
@@ -6366,7 +6360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1967432810}
-  - component: {fileID: 1967432809}
+  - component: {fileID: 1967432811}
   m_Layer: 0
   m_Name: Kiri
   m_TagString: Untagged
@@ -6374,29 +6368,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1967432809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967432808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 236301658}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 0
-  m_Duration: 600
-  m_MaxSpeed: 0.17082891
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0
 --- !u!4 &1967432810
 Transform:
   m_ObjectHideFlags: 0
@@ -6413,6 +6384,26 @@ Transform:
   - {fileID: 1217418502}
   m_Father: {fileID: 888290770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1967432811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967432808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1506b9f9b72af8641963f6228133f4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineContainer: {fileID: 236301658}
+  speed: 0.2
+  alignToSplineDirection: 1
+  rotationSpeed: 360
+  loop: 1
+  pauseAtLoopEnd: 0
+  startOffset: 0
+  playOnStart: 1
 --- !u!1 &2015393362
 GameObject:
   m_ObjectHideFlags: 0
@@ -7150,20 +7141,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145033237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Script: {fileID: 11500000, guid: 1506b9f9b72af8641963f6228133f4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 1036998478}
-  m_PlayOnAwake: 1
-  m_LoopMode: 1
-  m_Method: 0
-  m_Duration: 600
-  m_MaxSpeed: 0.19244125
-  m_EasingMode: 0
-  m_AlignmentMode: 1
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0.02
+  splineContainer: {fileID: 1036998478}
+  speed: 0.2
+  alignToSplineDirection: 1
+  rotationSpeed: 360
+  loop: 1
+  pauseAtLoopEnd: 0
+  startOffset: 0
+  playOnStart: 1
 --- !u!4 &505485589396494755
 Transform:
   m_ObjectHideFlags: 0
