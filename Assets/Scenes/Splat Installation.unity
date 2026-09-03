@@ -9212,8 +9212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minLevelsVisited: 5
   requiredFinalScene: Splat Installation
-  extraNpcs:
-  - {fileID: 1369851559}
+  npcsToActivate: []
+  npcsToDeactivate: []
 --- !u!1001 &2033114740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9899,6 +9899,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ca88a2ba2ce77b845acec2a3b2ed00af, type: 2}
+    - target: {fileID: 1044062295795058208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: walkFootstepLoop
+      value: 
+      objectReference: {fileID: 8300000, guid: 24c0d77cef89840d0b4ff803e5bacd09, type: 3}
+    - target: {fileID: 1044062295795058208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: sprintFootstepLoop
+      value: 
+      objectReference: {fileID: 8300000, guid: c8c2cba622fa7426abe1fd4367b15b25, type: 3}
     - target: {fileID: 3646462052870580491, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9980,6 +9988,10 @@ PrefabInstance:
       value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: bobSpeed
+      value: 8.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: crosshair
       value: 1
       objectReference: {fileID: 0}
@@ -9993,15 +10005,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: walkSpeed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: enableJump
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: enableZoom
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: bobAmount.y
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: holdToCrouch
