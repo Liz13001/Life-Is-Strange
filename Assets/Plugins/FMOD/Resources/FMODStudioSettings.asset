@@ -390,8 +390,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../Documents/Projects 2026/2026 - LISCYO/FMOD/20260915_FMOD_LISCYO/FMOD_LISCYO_SEPT26/FMOD_LISCYO_SEPT26.fspro
-  sourceBankPath: ../Documents/Projects 2026/2026 - LISCYO/FMOD/20260915_FMOD_LISCYO/FMOD_LISCYO_SEPT26/Build
+  sourceProjectPath: ../Documents/Projects 2026/2026 - LISCYO/FMOD/FMOD_LISCYO_SEPT26/FMOD_LISCYO_SEPT26.fspro
+  sourceBankPath: ../Documents/Projects 2026/2026 - LISCYO/FMOD/FMOD_LISCYO_SEPT26/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -413,7 +413,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -424,10 +425,10 @@ MonoBehaviour:
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
   EnableErrorCallback: 0
-  SharedLibraryUpdateStage: 3
-  SharedLibraryTimeSinceStart: 71.31723283400001
+  SharedLibraryUpdateStage: 0
+  SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131860
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131860
   Platforms:
   - {fileID: -1706688384977255802}
