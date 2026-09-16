@@ -9,7 +9,6 @@ public class SunaTimelineCycleController : MonoBehaviour
 
     [Header("Timeline Directors")]
     public PlayableDirector timeline01Suna1;
-
     public PlayableDirector timeline02Suna1;
     public PlayableDirector timeline02Suna2;
 
@@ -22,6 +21,7 @@ public class SunaTimelineCycleController : MonoBehaviour
     private int sequenceIndex = 0;
     private bool charactersVisible = false;
     private bool isPlaying = false;
+    private bool performanceFinished = false;
 
     private int directorsFinished = 0;
     private int directorsExpected = 0;
@@ -44,6 +44,18 @@ public class SunaTimelineCycleController : MonoBehaviour
         if (!Input.GetKeyDown(triggerKey) || isPlaying)
             return;
 
+        // Final P press: hide both characters
+        if (performanceFinished)
+        {
+            SetSuna1Visible(false);
+            SetSuna2Visible(false);
+
+            performanceFinished = false;
+            charactersVisible = false;
+
+            return;
+        }
+
         if (!charactersVisible)
         {
             ShowCurrentSequenceCharacters();
@@ -58,7 +70,7 @@ public class SunaTimelineCycleController : MonoBehaviour
     {
         if (sequenceIndex == 0)
         {
-            // Set Timeline 01 to its first frame
+            // Prepare Timeline 01 at frame 0
             timeline01Suna1.time = 0;
             timeline01Suna1.Evaluate();
 
@@ -67,8 +79,8 @@ public class SunaTimelineCycleController : MonoBehaviour
         }
         else if (sequenceIndex == 1)
         {
-            // Set BOTH Timeline 02 directors to their first frame
-            // BEFORE making the characters visible
+            // Prepare BOTH Timeline 02 directors at frame 0
+            // before making the characters visible
             timeline02Suna1.time = 0;
             timeline02Suna1.Evaluate();
 
@@ -90,7 +102,6 @@ public class SunaTimelineCycleController : MonoBehaviour
         if (sequenceIndex == 0)
         {
             directorsExpected = 1;
-
             ResetAndPlay(timeline01Suna1);
         }
         else if (sequenceIndex == 1)
@@ -109,21 +120,28 @@ public class SunaTimelineCycleController : MonoBehaviour
 
         directorsFinished++;
 
-        // Wait until all directors in this sequence are finished
+        // If two directors are running, wait until both are finished
         if (directorsFinished < directorsExpected)
             return;
 
-        SetSuna1Visible(false);
-        SetSuna2Visible(false);
-
-        charactersVisible = false;
         isPlaying = false;
 
-        sequenceIndex++;
-
-        // Loop back to sequence 1
-        if (sequenceIndex > 1)
-            sequenceIndex = 0;
+        if (sequenceIndex == 0)
+        {
+            // Choreo 01 finished
+            // Suna 1 stays visible
+            // Next P prepares sequence 02
+            sequenceIndex = 1;
+            charactersVisible = false;
+        }
+        else if (sequenceIndex == 1)
+        {
+            // Choreo 02 finished
+            // Both Sunas stay visible
+            // Next P hides both
+            performanceFinished = true;
+            charactersVisible = true;
+        }
     }
 
     void PrepareDirector(PlayableDirector director)
