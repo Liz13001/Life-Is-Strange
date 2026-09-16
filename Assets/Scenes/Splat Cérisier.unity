@@ -1684,6 +1684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417777868}
   - component: {fileID: 417777869}
+  - component: {fileID: 417777870}
   m_Layer: 0
   m_Name: Small Bobby Car Pivot
   m_TagString: Untagged
@@ -1725,6 +1726,37 @@ MonoBehaviour:
   useRandomPauses: 1
   minPauseDuration: 1
   maxPauseDuration: 4
+--- !u!114 &417777870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417777866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1745956083
+      Data2: 1283393491
+      Data3: -1803345535
+      Data4: -1099055263
+    Path: event:/MISC/Bobby Car
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0.4
+  OverrideMaxDistance: 25
 --- !u!1001 &444744694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1733,6 +1765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 272120037}
     m_Modifications:
+    - target: {fileID: -7511558181221131132, guid: 8331743a32f804744a526cc2594c43f5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9efbbfd99442a0489001295fab4348a, type: 3}
       propertyPath: m_LocalScale.x
       value: 206.4
@@ -1800,10 +1836,6 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f9efbbfd99442a0489001295fab4348a, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 8331743a32f804744a526cc2594c43f5, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2143,6 +2175,69 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!1 &547033037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547033039}
+  - component: {fileID: 547033038}
+  m_Layer: 0
+  m_Name: Cherry Blossom St 2 Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &547033038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547033037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1937036165
+      Data2: 1246474610
+      Data3: -1411418709
+      Data4: 1004718650
+    Path: event:/AMBIENCE/Cherry Blossom St 2
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1.2
+  OverrideMaxDistance: 350
+--- !u!4 &547033039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547033037}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.098522, y: -0.41116157, z: 31.721256}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &587575015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: afec5a858850ed9428034d5a7efca401, type: 3}
@@ -3017,6 +3112,101 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331136101}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1373714275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373714277}
+  - component: {fileID: 1373714276}
+  - component: {fileID: 1373714278}
+  m_Layer: 0
+  m_Name: Background Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1373714276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373714275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 223083781
+      Data2: 1151347242
+      Data3: -1422779251
+      Data4: 179850025
+    Path: event:/MUSIC/Petals
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1373714277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373714275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19202137, y: -0.2636515, z: -3.7589955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373714278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373714275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1230890705
+      Data2: 1241653283
+      Data3: -347014245
+      Data4: -758276026
+    Path: event:/AMBIENCE/Cherry Blossom St
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1.2
+  OverrideMaxDistance: 400
 --- !u!1 &1384098081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,6 +3499,44 @@ MonoBehaviour:
   climbSpeed: 2
   snapSpeed: 3
   horizontalClimbSpeed: 1.5
+--- !u!114 &1555211071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555211057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96662a1bddccd48dd940a37200ed31a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -2040273787
+      Data2: 1147243243
+      Data3: 429779626
+      Data4: 573326700
+    Path: event:/PLAYER/Footsteps
+  jumpEvent:
+    Guid:
+      Data1: -463997873
+      Data2: 1243461163
+      Data3: 1312580496
+      Data4: 1134712461
+    Path: event:/PLAYER/Jump
+  landEvent:
+    Guid:
+      Data1: -488405480
+      Data2: 1091691186
+      Data3: -871985007
+      Data4: -195571353
+    Path: event:/PLAYER/Land
+  walkingBPM: 116
+  sprintingBPM: 180
+  speedThreshold: 0.2
+  sprintSpeedThreshold: 4.5
+  surface: Concrete
 --- !u!1 &1609192433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,6 +4586,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1044062295795058208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044062295795058208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: footstepLoop
       value: 
       objectReference: {fileID: 8300000, guid: 56f9881677522431b920fe5283ca06fd, type: 3}
@@ -4369,6 +4601,10 @@ PrefabInstance:
       propertyPath: sprintFootstepLoop
       value: 
       objectReference: {fileID: 8300000, guid: d42e761c883af4c46bf454caaf9f7890, type: 3}
+    - target: {fileID: 3423349930584899770, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3646462052870580491, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4508,6 +4744,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1555211063}
+    - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1555211071}
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -4525,3 +4764,5 @@ SceneRoots:
   - {fileID: 362916356}
   - {fileID: 2056886118}
   - {fileID: 827223066}
+  - {fileID: 1373714277}
+  - {fileID: 547033039}

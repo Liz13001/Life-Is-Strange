@@ -137,6 +137,10 @@ public class FirstPersonController : MonoBehaviour
 
     #endregion
 
+    public bool IsWalking => isWalking;
+    public bool IsSprinting => isSprinting;
+    public bool IsGrounded => isGrounded;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
