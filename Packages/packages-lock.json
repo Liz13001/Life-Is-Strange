@@ -8,7 +8,7 @@
       "url": "https://packages.unity.com"
     },
     "com.soupday.cc3_unity_tools": {
-      "version": "file:C:/Users/lisak/Downloads/ccic_unity_tools-2_2_6/CCiC-Unity-Tools-2.2.6",
+      "version": "file:C:/Users/lisak/Downloads/ccic_unity_tools-2_2_6 (1)/CCiC-Unity-Tools-2.2.6",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -219,28 +219,6 @@
         "com.unity.rendering.light-transport": "1.0.1"
       }
     },
-    "com.unity.render-pipelines.high-definition": {
-      "version": "17.0.3",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.video": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.render-pipelines.core": "17.0.3",
-        "com.unity.shadergraph": "17.0.3",
-        "com.unity.visualeffectgraph": "17.0.3",
-        "com.unity.render-pipelines.high-definition-config": "17.0.3"
-      }
-    },
-    "com.unity.render-pipelines.high-definition-config": {
-      "version": "17.0.3",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.render-pipelines.core": "17.0.3"
-      }
-    },
     "com.unity.render-pipelines.universal": {
       "version": "17.0.3",
       "depth": 0,
@@ -363,15 +341,6 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
-      }
-    },
-    "com.unity.visualeffectgraph": {
-      "version": "17.0.3",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.shadergraph": "17.0.3",
-        "com.unity.render-pipelines.core": "17.0.3"
       }
     },
     "com.unity.visualscripting": {
