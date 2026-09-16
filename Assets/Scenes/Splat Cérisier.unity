@@ -3532,7 +3532,7 @@ MonoBehaviour:
       Data3: -871985007
       Data4: -195571353
     Path: event:/PLAYER/Land
-  walkingBPM: 116
+  walkingBPM: 114
   sprintingBPM: 180
   speedThreshold: 0.2
   sprintSpeedThreshold: 4.5
