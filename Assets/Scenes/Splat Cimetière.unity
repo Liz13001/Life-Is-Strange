@@ -11922,6 +11922,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1453574324}
+  - component: {fileID: 1453574326}
+  - component: {fileID: 1453574325}
   m_Layer: 0
   m_Name: Corridor
   m_TagString: Untagged
@@ -11946,6 +11948,53 @@ Transform:
   - {fileID: 1223176464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 83.676, z: 0}
+--- !u!114 &1453574325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453574323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76195042845784477b76392a2d5d31fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1041939210}
+  proximityCollider: {fileID: 1223176461}
+  eventEmitter: {fileID: 1453574326}
+  maxDistance: 20
+--- !u!114 &1453574326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453574323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -931775703
+      Data2: 1155327916
+      Data3: -1061336704
+      Data4: 1962680494
+    Path: event:/SPOT/Orange Corridor
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 45
 --- !u!1 &1515987780
 GameObject:
   m_ObjectHideFlags: 0
@@ -12589,69 +12638,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580275820}
   m_CullTransparentMesh: 1
---- !u!1 &1600520352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1600520354}
-  - component: {fileID: 1600520353}
-  m_Layer: 0
-  m_Name: Orange Corridor Emitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1600520353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600520352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -931775703
-      Data2: 1155327916
-      Data3: -1061336704
-      Data4: 1962680494
-    Path: event:/SPOT/Orange Corridor
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 25
---- !u!4 &1600520354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600520352}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.095128596, y: 0.5834149, z: 10.991562}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1609192433
 GameObject:
   m_ObjectHideFlags: 0
@@ -16673,7 +16659,6 @@ SceneRoots:
   - {fileID: 646316445}
   - {fileID: 1072244640}
   - {fileID: 375724644}
-  - {fileID: 1600520354}
   - {fileID: 1647310391}
   - {fileID: 437729376}
   - {fileID: 1687904462}
