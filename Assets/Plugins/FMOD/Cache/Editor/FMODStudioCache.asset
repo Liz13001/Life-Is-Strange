@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8906356230810132259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODBanks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639253424761156649
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8765370479769324828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,13 +37,13 @@ MonoBehaviour:
     Data3: 365126304
     Data4: -88695919
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 5
-  MaxDistance: 10
+  MaxDistance: 30
   Length: 18666
 --- !u!114 &-8120765634943658971
 MonoBehaviour:
@@ -46,7 +64,7 @@ MonoBehaviour:
     Data3: -606132327
     Data4: 901962133
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -73,7 +91,7 @@ MonoBehaviour:
     Data3: -1507817062
     Data4: -368522255
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -100,7 +118,7 @@ MonoBehaviour:
     Data3: -2108234868
     Data4: 322828479
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -151,7 +169,7 @@ MonoBehaviour:
     Data3: -1045389380
     Data4: -1693759615
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -208,7 +226,7 @@ MonoBehaviour:
     Data3: -1299674489
     Data4: -1455385995
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -259,7 +277,7 @@ MonoBehaviour:
     Data3: 1312580496
     Data4: 1134712461
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -268,6 +286,139 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5934953418835266191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Church Continuous
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Church Continuous
+  Guid:
+    Data1: -1039666138
+    Data2: 1322052208
+    Data3: -1830713192
+    Data4: 525702627
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 2
+  MaxDistance: 400
+  Length: 317016
+--- !u!114 &-5338292227497976780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Orange Corridor/Proximity
+  m_EditorClassIdentifier: 
+  Name: Proximity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 488127647
+    data2: 2609628193
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5027546945289612975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MISC/Bobby Car
+  m_EditorClassIdentifier: 
+  Path: event:/MISC/Bobby Car
+  Guid:
+    Data1: 1745956083
+    Data2: 1283393491
+    Data3: -1803345535
+    Data4: -1099055263
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0.4
+  MaxDistance: 25
+  Length: 16430
+--- !u!114 &-4800810267179492066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIC/Petals
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/Petals
+  Guid:
+    Data1: 223083781
+    Data2: 1151347242
+    Data3: -1422779251
+    Data4: 179850025
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 88000
+--- !u!114 &-4331461065130346624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Orange Corridor
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Orange Corridor
+  Guid:
+    Data1: -931775703
+    Data2: 1155327916
+    Data3: -1061336704
+    Data4: 1962680494
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5338292227497976780}
+  MinDistance: 1
+  MaxDistance: 45
+  Length: 119112
 --- !u!114 &-4316608947415846007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +447,33 @@ MonoBehaviour:
   - Wood
   - Sand
   Exists: 1
+--- !u!114 &-4105616949208579651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMBIENCE/Cherry Blossom St 2
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE/Cherry Blossom St 2
+  Guid:
+    Data1: -1937036165
+    Data2: 1246474610
+    Data3: -1411418709
+    Data4: 1004718650
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1.2
+  MaxDistance: 350
+  Length: 125000
 --- !u!114 &-2822212548930660361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +493,7 @@ MonoBehaviour:
     Data3: -1270541647
     Data4: -29191533
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -342,7 +520,7 @@ MonoBehaviour:
     Data3: 429779626
     Data4: 573326700
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -351,6 +529,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1605715656903027407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMBIENCE/Cherry Blossom St
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE/Cherry Blossom St
+  Guid:
+    Data1: -1230890705
+    Data2: 1241653283
+    Data3: -347014245
+    Data4: -758276026
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1.2
+  MaxDistance: 400
+  Length: 240000
+--- !u!114 &-1246148684304467010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Church Bells
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Church Bells
+  Guid:
+    Data1: -1076814501
+    Data2: 1081090562
+    Data3: 566897323
+    Data4: -1570865317
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0.7
+  MaxDistance: 650
+  Length: 13005
 --- !u!114 &-1230578927568928723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +602,7 @@ MonoBehaviour:
     Data3: -1280526417
     Data4: 1117580688
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -379,6 +611,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 44000
+--- !u!114 &-896695679355321894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMBIENCE/Basketballfield
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE/Basketballfield
+  Guid:
+    Data1: -714019588
+    Data2: 1294651298
+    Data3: -86734943
+    Data4: 836586518
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 53062
 --- !u!114 &-652836084398794320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +657,7 @@ MonoBehaviour:
     Data3: -2015751506
     Data4: 1265465276
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -426,7 +685,7 @@ MonoBehaviour:
     Data3: -1674707523
     Data4: 1374823042
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -447,8 +706,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 4195962697439255088}
-  - {fileID: 7759921583743993475}
+  - {fileID: 5602155426736664709}
+  - {fileID: -8906356230810132259}
   EditorEvents:
   - {fileID: 2809708931786646106}
   - {fileID: -652836084398794320}
@@ -475,14 +734,25 @@ MonoBehaviour:
   - {fileID: 352544711309668190}
   - {fileID: -1230578927568928723}
   - {fileID: -8120765634943658971}
+  - {fileID: -4800810267179492066}
+  - {fileID: -5934953418835266191}
+  - {fileID: -4331461065130346624}
+  - {fileID: -1605715656903027407}
+  - {fileID: 6954587241054347211}
+  - {fileID: -1246148684304467010}
+  - {fileID: 5998534105757851273}
+  - {fileID: -4105616949208579651}
+  - {fileID: 2155464114456505499}
+  - {fileID: -5027546945289612975}
+  - {fileID: -896695679355321894}
   EditorParameters:
   - {fileID: 3550930422143102408}
   MasterBanks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   StringsBanks:
-  - {fileID: 4195962697439255088}
+  - {fileID: 5602155426736664709}
   cacheVersion: 131860
-  cacheTime: 639250897384404060
+  cacheTime: 639253424761226756
   SerializableEventsDict:
   - key: event:/SPOT/Orb
     index: 0
@@ -534,6 +804,28 @@ MonoBehaviour:
     index: 23
   - key: snapshot:/Main Menu
     index: 24
+  - key: event:/MUSIC/Petals
+    index: 25
+  - key: event:/SPOT/Church Continuous
+    index: 26
+  - key: event:/SPOT/Orange Corridor
+    index: 27
+  - key: event:/AMBIENCE/Cherry Blossom St
+    index: 28
+  - key: event:/AMBIENCE/Cemetery
+    index: 29
+  - key: event:/SPOT/Church Bells
+    index: 30
+  - key: event:/SPOT/Broken Heart
+    index: 31
+  - key: event:/AMBIENCE/Cherry Blossom St 2
+    index: 32
+  - key: event:/MISC/Bobby Car Stationary
+    index: 33
+  - key: event:/MISC/Bobby Car
+    index: 34
+  - key: event:/AMBIENCE/Basketballfield
+    index: 35
 --- !u!114 &352544711309668190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,7 +845,7 @@ MonoBehaviour:
     Data3: -1621975914
     Data4: -489225314
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -580,7 +872,7 @@ MonoBehaviour:
     Data3: 804326827
     Data4: -1372145575
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -612,6 +904,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2155464114456505499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MISC/Bobby Car Stationary
+  m_EditorClassIdentifier: 
+  Path: event:/MISC/Bobby Car Stationary
+  Guid:
+    Data1: -1017035059
+    Data2: 1122598433
+    Data3: 139602097
+    Data4: 1211626123
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0.6
+  MaxDistance: 20
+  Length: 11759
 --- !u!114 &2193023722168940341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,7 +974,7 @@ MonoBehaviour:
     Data3: -1101827436
     Data4: 1249551427
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -682,7 +1001,7 @@ MonoBehaviour:
     Data3: -1108899451
     Data4: -1274105141
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -709,7 +1028,7 @@ MonoBehaviour:
     Data3: 1215015098
     Data4: 2117915123
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -792,26 +1111,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &4195962697439255088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../Documents/Projects 2026/2026 - LISCYO/FMOD/FMOD_LISCYO_SEPT26/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 639250897384404060
-  FileSizes:
-  - Name: Desktop
-    Value: 2362
-  Exists: 1
 --- !u!114 &5147202786191566325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +1130,7 @@ MonoBehaviour:
     Data3: 1319831977
     Data4: -384870382
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -859,7 +1158,7 @@ MonoBehaviour:
     Data3: -1571869307
     Data4: 824765069
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -867,6 +1166,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2166
+--- !u!114 &5602155426736664709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMODBanks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639253424761226756
+  FileSizes:
+  - Name: 
+    Value: 2948
+  Exists: 1
+--- !u!114 &5998534105757851273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Broken Heart
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Broken Heart
+  Guid:
+    Data1: 516213625
+    Data2: 1191928219
+    Data3: 76301982
+    Data4: -1647324863
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 2.2
+  MaxDistance: 6.4
+  Length: 60958
 --- !u!114 &6078820332045117846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,7 +1232,7 @@ MonoBehaviour:
     Data3: -871985007
     Data4: -195571353
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -919,6 +1265,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &6954587241054347211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMBIENCE/Cemetery
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE/Cemetery
+  Guid:
+    Data1: -1420186803
+    Data2: 1187061854
+    Data3: -1276200297
+    Data4: 123299326
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 650
+  Length: 169777
 --- !u!114 &7504864535658782609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,7 +1311,7 @@ MonoBehaviour:
     Data3: -1189139563
     Data4: -214993636
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -946,26 +1319,6 @@ MonoBehaviour:
   MinDistance: 2.6000001
   MaxDistance: 9.2
   Length: 8000
---- !u!114 &7759921583743993475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../Documents/Projects 2026/2026 - LISCYO/FMOD/FMOD_LISCYO_SEPT26/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 639250897384388674
-  FileSizes:
-  - Name: Desktop
-    Value: 8503808
-  Exists: 1
 --- !u!114 &7784425568350438366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,7 +1338,7 @@ MonoBehaviour:
     Data3: -81656953
     Data4: -569048891
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1012,7 +1365,7 @@ MonoBehaviour:
     Data3: -871374657
     Data4: 1175093965
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1040,7 +1393,7 @@ MonoBehaviour:
     Data3: 1485977756
     Data4: -196983803
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1095,7 +1448,7 @@ MonoBehaviour:
     Data3: 628673724
     Data4: 912612020
   Banks:
-  - {fileID: 7759921583743993475}
+  - {fileID: -8906356230810132259}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
