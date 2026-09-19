@@ -11,6 +11,9 @@ public class FollowPlayerZ : MonoBehaviour
     public Transform asaf1;
     public Transform asaf2;
 
+    [Header("Input")]
+    public KeyCode toggleKey = KeyCode.O;
+
     private bool followActive = false;
 
     private float startPlayerZ;
@@ -20,27 +23,64 @@ public class FollowPlayerZ : MonoBehaviour
     private float asaf1StartZ;
     private float asaf2StartZ;
 
+    void Start()
+    {
+        // Follow starts OFF.
+        // IMPORTANT: The component itself stays enabled!
+        followActive = false;
+
+        Debug.Log("FollowPlayerZ ready - press O to toggle");
+    }
+
     void Update()
     {
-        // Nur beim ERSTEN P aktivieren
-        if (!followActive && Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(toggleKey))
         {
-            startPlayerZ = playerCamera.position.z;
+            if (followActive)
+            {
+                followActive = false;
+                Debug.Log("Z-Follow OFF");
+            }
+            else
+            {
+                ActivateFollow();
+            }
+        }
+    }
 
+    void ActivateFollow()
+    {
+        if (playerCamera == null)
+        {
+            Debug.LogWarning("FollowPlayerZ: Player Camera is missing!");
+            return;
+        }
+
+        startPlayerZ = playerCamera.position.z;
+
+        if (suna1 != null)
             suna1StartZ = suna1.position.z;
+
+        if (suna2 != null)
             suna2StartZ = suna2.position.z;
+
+        if (asaf1 != null)
             asaf1StartZ = asaf1.position.z;
+
+        if (asaf2 != null)
             asaf2StartZ = asaf2.position.z;
 
-            followActive = true;
+        followActive = true;
 
-            Debug.Log("Suna/Asaf Z-Follow aktiviert");
-        }
+        Debug.Log("Z-Follow ON");
     }
 
     void LateUpdate()
     {
         if (!followActive)
+            return;
+
+        if (playerCamera == null)
             return;
 
         float offsetZ = playerCamera.position.z - startPlayerZ;

@@ -1,141 +1,218 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class SunaTimelineCycleController : MonoBehaviour
+public class SunaTimelineController : MonoBehaviour
 {
     [Header("Characters")]
     public GameObject suna1Root;
     public GameObject suna2Root;
+    public GameObject asaf1Root;
+    public GameObject asaf2Root;
 
     [Header("Timeline Directors")]
-    public PlayableDirector timeline01Suna1;
-    public PlayableDirector timeline02Suna1;
-    public PlayableDirector timeline02Suna2;
+    public PlayableDirector timeline01;
+    public PlayableDirector timeline02A;
+    public PlayableDirector timeline02B;
 
     [Header("Input")]
     public KeyCode triggerKey = KeyCode.P;
 
     private Renderer[] suna1Renderers;
     private Renderer[] suna2Renderers;
+    private Renderer[] asaf1Renderers;
+    private Renderer[] asaf2Renderers;
 
-    private int sequenceIndex = 0;
-    private bool charactersVisible = false;
+    /*
+        STATE 0
+        Start
+        -> Everyone invisible
+        P -> Suna 1 appears
+
+        STATE 1
+        -> Suna 1 visible
+        P -> Choreo 1 starts
+        -> Asafs appear through Activation Tracks
+
+        STATE 2
+        -> Choreo 1 finished
+        P -> Suna 2 appears AND Choreo 2 starts
+
+        STATE 3
+        -> Choreo 2 running
+
+        STATE 4
+        -> Choreo 2 finished
+        P -> Everyone disappears
+
+        STATE 5
+        -> Finished
+    */
+
+    private int state = 0;
     private bool isPlaying = false;
-    private bool performanceFinished = false;
 
     private int directorsFinished = 0;
     private int directorsExpected = 0;
 
+
+    // =========================================================
+    // START
+    // =========================================================
+
     void Start()
     {
-        // Get all renderers of both Sunas
-        suna1Renderers = suna1Root.GetComponentsInChildren<Renderer>(true);
-        suna2Renderers = suna2Root.GetComponentsInChildren<Renderer>(true);
+        // Get renderers
+        suna1Renderers =
+            suna1Root.GetComponentsInChildren<Renderer>(true);
 
-        // Both Sunas invisible at game start
+        suna2Renderers =
+            suna2Root.GetComponentsInChildren<Renderer>(true);
+
+        asaf1Renderers =
+            asaf1Root.GetComponentsInChildren<Renderer>(true);
+
+        asaf2Renderers =
+            asaf2Root.GetComponentsInChildren<Renderer>(true);
+
+
+        // Sunas invisible at game start
         SetSuna1Visible(false);
         SetSuna2Visible(false);
 
-        // Prepare all Timeline Directors
-        PrepareDirector(timeline01Suna1);
-        PrepareDirector(timeline02Suna1);
-        PrepareDirector(timeline02Suna2);
 
-        // IMPORTANT:
-        // Evaluate Timeline 01 at frame 0.
-        // This makes the Asaf Activation Track take effect immediately,
-        // so Asaf is invisible at game start.
-        if (timeline01Suna1 != null)
-        {
-            timeline01Suna1.time = 0;
-            timeline01Suna1.Evaluate();
-        }
+        // Asafs invisible at game start.
+        // Their Activation Tracks will activate them later.
+        asaf1Root.SetActive(false);
+        asaf2Root.SetActive(false);
+
+
+        // Prepare Timeline Directors
+        PrepareDirector(timeline01);
+        PrepareDirector(timeline02A);
+        PrepareDirector(timeline02B);
+
+        state = 0;
     }
+
+
+    // =========================================================
+    // INPUT
+    // =========================================================
 
     void Update()
     {
-        if (!Input.GetKeyDown(triggerKey) || isPlaying)
+        if (!Input.GetKeyDown(triggerKey))
             return;
 
-        // Final P:
-        // Hide both Sunas
-        if (performanceFinished)
-        {
-            SetSuna1Visible(false);
-            SetSuna2Visible(false);
-
-            performanceFinished = false;
-            charactersVisible = false;
-
+        // Ignore P while a choreography is running
+        if (isPlaying)
             return;
-        }
 
-        // First P of a sequence:
-        // Prepare positions and make characters visible
-        if (!charactersVisible)
-        {
-            ShowCurrentSequenceCharacters();
-        }
-        // Second P:
-        // Start choreography
-        else
-        {
-            PlayCurrentSequence();
-        }
-    }
 
-    void ShowCurrentSequenceCharacters()
-    {
-        if (sequenceIndex == 0)
-        {
-            // Prepare Timeline 01 at frame 0
-            timeline01Suna1.time = 0;
-            timeline01Suna1.Evaluate();
+        // =====================================================
+        // P1
+        // Show ONLY Suna 1
+        // =====================================================
 
-            // Only Suna 1 visible
+        if (state == 0)
+        {
+            // Put Timeline 01 at frame 0.
+            // This also prepares the Asaf Activation Tracks.
+            if (timeline01 != null)
+            {
+                timeline01.time = 0;
+                timeline01.Evaluate();
+            }
+
             SetSuna1Visible(true);
             SetSuna2Visible(false);
-        }
-        else if (sequenceIndex == 1)
-        {
-            // Prepare BOTH Timeline 02 directors at frame 0
-            timeline02Suna1.time = 0;
-            timeline02Suna1.Evaluate();
 
-            timeline02Suna2.time = 0;
-            timeline02Suna2.Evaluate();
+            state = 1;
+            return;
+        }
+
+
+        // =====================================================
+        // P2
+        // Start Choreography 1
+        // =====================================================
+
+        if (state == 1)
+        {
+            isPlaying = true;
+
+            directorsFinished = 0;
+            directorsExpected = 1;
+
+            ResetAndPlay(timeline01);
+
+            return;
+        }
+
+
+        // =====================================================
+        // P3
+        // Show Suna 2 AND start Choreography 2
+        // =====================================================
+
+        if (state == 2)
+        {
+            // Prepare Choreo 2
+            if (timeline02A != null)
+            {
+                timeline02A.time = 0;
+                timeline02A.Evaluate();
+            }
+
+            if (timeline02B != null)
+            {
+                timeline02B.time = 0;
+                timeline02B.Evaluate();
+            }
+
 
             // Both Sunas visible
             SetSuna1Visible(true);
             SetSuna2Visible(true);
-        }
 
-        charactersVisible = true;
-    }
 
-    void PlayCurrentSequence()
-    {
-        isPlaying = true;
-        directorsFinished = 0;
+            // Start Choreo 2
+            isPlaying = true;
 
-        if (sequenceIndex == 0)
-        {
-            // First choreography:
-            // only one Timeline Director
-            directorsExpected = 1;
-
-            ResetAndPlay(timeline01Suna1);
-        }
-        else if (sequenceIndex == 1)
-        {
-            // Second choreography:
-            // two Sunas play the same choreography simultaneously
+            directorsFinished = 0;
             directorsExpected = 2;
 
-            ResetAndPlay(timeline02Suna1);
-            ResetAndPlay(timeline02Suna2);
+            state = 3;
+
+            ResetAndPlay(timeline02A);
+            ResetAndPlay(timeline02B);
+
+            return;
+        }
+
+
+        // =====================================================
+        // P4
+        // Hide EVERYONE
+        // =====================================================
+
+        if (state == 4)
+        {
+            SetSuna1Visible(false);
+            SetSuna2Visible(false);
+
+            SetAsaf1Visible(false);
+            SetAsaf2Visible(false);
+
+            state = 5;
+            return;
         }
     }
+
+
+    // =========================================================
+    // TIMELINE FINISHED
+    // =========================================================
 
     void OnDirectorStopped(PlayableDirector director)
     {
@@ -144,30 +221,42 @@ public class SunaTimelineCycleController : MonoBehaviour
 
         directorsFinished++;
 
-        // For choreography 02:
-        // wait until BOTH directors have finished
+
+        // Choreo 2 has two Directors.
+        // Wait until BOTH have finished.
         if (directorsFinished < directorsExpected)
             return;
 
+
         isPlaying = false;
 
-        if (sequenceIndex == 0)
+
+        // Choreo 1 finished
+        if (state == 1)
         {
-            // Choreography 01 finished.
-            // Suna 1 stays visible.
-            // Next P prepares choreography 02.
-            sequenceIndex = 1;
-            charactersVisible = false;
+            // Everyone stays exactly where Timeline left them.
+            // Next P starts Choreo 2.
+
+            state = 2;
+            return;
         }
-        else if (sequenceIndex == 1)
+
+
+        // Choreo 2 finished
+        if (state == 3)
         {
-            // Choreography 02 finished.
-            // Both Sunas stay visible.
-            // Next P hides them.
-            performanceFinished = true;
-            charactersVisible = true;
+            // Everyone stays visible.
+            // Next P hides everyone.
+
+            state = 4;
+            return;
         }
     }
+
+
+    // =========================================================
+    // DIRECTOR SETUP
+    // =========================================================
 
     void PrepareDirector(PlayableDirector director)
     {
@@ -180,6 +269,7 @@ public class SunaTimelineCycleController : MonoBehaviour
         director.stopped += OnDirectorStopped;
     }
 
+
     void ResetAndPlay(PlayableDirector director)
     {
         if (director == null)
@@ -190,31 +280,64 @@ public class SunaTimelineCycleController : MonoBehaviour
         director.Play();
     }
 
+
+    // =========================================================
+    // VISIBILITY
+    // =========================================================
+
     void SetSuna1Visible(bool visible)
     {
+        if (suna1Renderers == null)
+            return;
+
         foreach (Renderer r in suna1Renderers)
-        {
             r.enabled = visible;
-        }
     }
+
 
     void SetSuna2Visible(bool visible)
     {
+        if (suna2Renderers == null)
+            return;
+
         foreach (Renderer r in suna2Renderers)
-        {
             r.enabled = visible;
-        }
     }
+
+
+    void SetAsaf1Visible(bool visible)
+    {
+        if (asaf1Renderers == null)
+            return;
+
+        foreach (Renderer r in asaf1Renderers)
+            r.enabled = visible;
+    }
+
+
+    void SetAsaf2Visible(bool visible)
+    {
+        if (asaf2Renderers == null)
+            return;
+
+        foreach (Renderer r in asaf2Renderers)
+            r.enabled = visible;
+    }
+
+
+    // =========================================================
+    // CLEANUP
+    // =========================================================
 
     void OnDestroy()
     {
-        if (timeline01Suna1 != null)
-            timeline01Suna1.stopped -= OnDirectorStopped;
+        if (timeline01 != null)
+            timeline01.stopped -= OnDirectorStopped;
 
-        if (timeline02Suna1 != null)
-            timeline02Suna1.stopped -= OnDirectorStopped;
+        if (timeline02A != null)
+            timeline02A.stopped -= OnDirectorStopped;
 
-        if (timeline02Suna2 != null)
-            timeline02Suna2.stopped -= OnDirectorStopped;
+        if (timeline02B != null)
+            timeline02B.stopped -= OnDirectorStopped;
     }
 }
