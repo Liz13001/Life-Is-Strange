@@ -6995,7 +6995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1652202489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10930,6 +10930,7 @@ GameObject:
   - component: {fileID: 4918451716113458200}
   - component: {fileID: 4918451716113458209}
   - component: {fileID: 4918451716113458208}
+  - component: {fileID: 4918451716113458210}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -11229,6 +11230,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4918451716113458210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4918451716113458194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96662a1bddccd48dd940a37200ed31a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -2040273787
+      Data2: 1147243243
+      Data3: 429779626
+      Data4: 573326700
+    Path: event:/PLAYER/Footsteps
+  jumpEvent:
+    Guid:
+      Data1: -463997873
+      Data2: 1243461163
+      Data3: 1312580496
+      Data4: 1134712461
+    Path: event:/PLAYER/Jump
+  landEvent:
+    Guid:
+      Data1: -488405480
+      Data2: 1091691186
+      Data3: -871985007
+      Data4: -195571353
+    Path: event:/PLAYER/Land
+  walkingBPM: 114
+  sprintingBPM: 180
+  speedThreshold: 0.2
+  sprintSpeedThreshold: 4.5
+  surface: Grass
 --- !u!224 &4918451716143532588
 RectTransform:
   m_ObjectHideFlags: 0
