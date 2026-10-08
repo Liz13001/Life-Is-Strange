@@ -5573,6 +5573,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149735009}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1173120888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173120890}
+  - component: {fileID: 1173120889}
+  m_Layer: 0
+  m_Name: 'Splat Edge '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1173120889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173120888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77e4841bc5f04c2e8725e467d491104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4918451716113458206}
+  edgeColliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  maxDistance: 6
+  glitchEvent:
+    Guid:
+      Data1: 885394403
+      Data2: 1226210254
+      Data3: 761439919
+      Data4: -32366947
+    Path: event:/SPLAT/Splat Edge Glitches
+  snapshotEvent:
+    Guid:
+      Data1: 1552328765
+      Data2: 1161712610
+      Data3: 137154748
+      Data4: 1820960050
+    Path: snapshot:/Splat Edge
+--- !u!4 &1173120890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173120888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 151.12473, y: -12.666201, z: 334.16156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1210845513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e3024a5b2f58f943a1ced3b19c1f8c7, type: 3}
@@ -11592,3 +11655,4 @@ SceneRoots:
   - {fileID: 666618344}
   - {fileID: 530144833}
   - {fileID: 2091952117}
+  - {fileID: 1173120890}

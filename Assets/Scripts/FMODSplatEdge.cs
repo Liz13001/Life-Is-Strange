@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
@@ -7,12 +8,19 @@ public class FMODSplatEdge : MonoBehaviour
     [Header("Player")]
     public Transform player;
 
-    [Header("Splat Edge Colliders")]
-    public Collider[] edgeColliders;
+    [Header("Safe Spheres")]
+    [Tooltip("Areas where the glitch intensity is zero.")]
+    public SphereCollider[] safeSpheres;
 
-    [Header("Proximity")]
-    [Tooltip("Distance from a splat edge at which SplatEdge begins increasing.")]
-    public float maxDistance = 6f;
+    [Tooltip("Only spheres on these layers are considered.")]
+    public LayerMask audioZoneLayers;
+
+    [Header("Glitch Distance")]
+    [Tooltip("Distance outside a sphere where glitch reaches 1.")]
+    public float maxDistance = 10f;
+
+    [Tooltip("How quickly glitch intensity changes.")]
+    public float smoothingSpeed = 3f;
 
     [Header("FMOD")]
     public EventReference glitchEvent;
@@ -21,54 +29,112 @@ public class FMODSplatEdge : MonoBehaviour
     private EventInstance glitchInstance;
     private EventInstance snapshotInstance;
 
+    private float currentIntensity = 0f;
+
     void Start()
     {
-        // Start the glitch event and keep it running.
         glitchInstance = RuntimeManager.CreateInstance(glitchEvent);
-        glitchInstance.start();
 
-        // Start the snapshot and keep it running.
+        if (glitchInstance.isValid())
+        {
+            glitchInstance.setParameterByName("SplatEdge", 0f);
+            glitchInstance.start();
+        }
+
         snapshotInstance = RuntimeManager.CreateInstance(snapshotEvent);
-        snapshotInstance.start();
+
+        // The snapshot starts here, but its intensity
+        // is not yet controlled by this script.
+        // We will connect that separately in FMOD.
+        if (snapshotInstance.isValid())
+        {
+            snapshotInstance.start();
+        }
     }
 
     void Update()
     {
-        if (player == null || edgeColliders == null || edgeColliders.Length == 0)
+        if (player == null)
             return;
 
         float nearestDistance = Mathf.Infinity;
+        bool foundSphere = false;
 
-        foreach (Collider edge in edgeColliders)
+        if (safeSpheres != null)
         {
-            if (edge == null)
-                continue;
+            foreach (SphereCollider sphere in safeSpheres)
+            {
+                if (sphere == null ||
+                    !sphere.enabled ||
+                    !sphere.gameObject.activeInHierarchy)
+                    continue;
 
-            Vector3 closestPoint = edge.ClosestPoint(player.position);
-            float distance = Vector3.Distance(player.position, closestPoint);
+                // Ignore spheres on other layers.
+                if ((audioZoneLayers.value &
+                    (1 << sphere.gameObject.layer)) == 0)
+                    continue;
 
-            if (distance < nearestDistance)
-                nearestDistance = distance;
+                foundSphere = true;
+
+                // Inside a sphere, distance is zero.
+                Vector3 closestPoint =
+                    sphere.ClosestPoint(player.position);
+
+                float distance = Vector3.Distance(
+                    player.position,
+                    closestPoint
+                );
+
+                if (distance < nearestDistance)
+                    nearestDistance = distance;
+            }
         }
 
-       float splatEdge = 1f - Mathf.Clamp01(nearestDistance / maxDistance);
-       
-       Debug.Log("SplatEdge: " + splatEdge.ToString("F2") +
-          " | Distance: " + nearestDistance.ToString("F2") + " m");
+        float targetIntensity = 0f;
 
-        // Drive the glitch composition.
-        glitchInstance.setParameterByName("SplatEdge", splatEdge);
+        if (foundSphere)
+        {
+            // Inside either sphere: 0
+            // Outside: increases towards 1
+            targetIntensity = Mathf.Clamp01(
+                nearestDistance /
+                Mathf.Max(0.01f, maxDistance)
+            );
+        }
 
-        // Use the same value as the snapshot intensity.
-        snapshotInstance.setParameterByName("Intensity", splatEdge);
+        // Smooth changes in intensity.
+        currentIntensity = Mathf.MoveTowards(
+            currentIntensity,
+            targetIntensity,
+            Mathf.Max(0f, smoothingSpeed) * Time.deltaTime
+        );
+
+        // Control the glitch composition.
+        if (glitchInstance.isValid())
+        {
+            glitchInstance.setParameterByName(
+                "SplatEdge",
+                currentIntensity
+            );
+        }
     }
 
     void OnDestroy()
     {
-        glitchInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        glitchInstance.release();
+        if (glitchInstance.isValid())
+        {
+            glitchInstance.stop(
+                FMOD.Studio.STOP_MODE.IMMEDIATE
+            );
+            glitchInstance.release();
+        }
 
-        snapshotInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        snapshotInstance.release();
+        if (snapshotInstance.isValid())
+        {
+            snapshotInstance.stop(
+                FMOD.Studio.STOP_MODE.IMMEDIATE
+            );
+            snapshotInstance.release();
+        }
     }
 }
