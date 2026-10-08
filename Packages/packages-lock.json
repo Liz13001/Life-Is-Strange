@@ -8,9 +8,9 @@
       "url": "https://packages.unity.com"
     },
     "com.soupday.cc3_unity_tools": {
-      "version": "file:C:/Users/lisak/Downloads/ccic_unity_tools-2_2_6 (1)/CCiC-Unity-Tools-2.2.6",
+      "version": "file:CCiC-Unity-Tools-2.2.6",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.0"
       }
