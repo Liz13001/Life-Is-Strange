@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -7,6 +8,9 @@ public class GameState : MonoBehaviour
 
     [Header("NPC Status")]
     public bool npcWoken = false;
+
+    [Header("Flower Event")]
+    public bool flowerEventTriggered = false;
 
     [Header("Level Progress")]
     public bool hasVisitedLevel2 = false;
@@ -33,8 +37,11 @@ public class GameState : MonoBehaviour
             visitedScenes.Add(sceneName);
     }
 
-    public bool HasCompletedFullLoop(int minLevels, string requiredFinalScene)
+    public bool HasCompletedFullLoop(
+        int minLevels,
+        string requiredFinalScene)
     {
-        return visitedScenes.Count >= minLevels && visitedScenes.Contains(requiredFinalScene);
+        return visitedScenes.Count >= minLevels &&
+               visitedScenes.Contains(requiredFinalScene);
     }
 }
