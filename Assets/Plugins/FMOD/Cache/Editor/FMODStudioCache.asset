@@ -15,9 +15,36 @@ MonoBehaviour:
   Path: FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639253424761156649
+  lastModified: 639270820247401494
   FileSizes: []
   Exists: 1
+--- !u!114 &-8842557435448111235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Wolf
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Wolf
+  Guid:
+    Data1: 299403077
+    Data2: 1079820520
+    Data3: -693798515
+    Data4: 569084948
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0.5
+  MaxDistance: 8
+  Length: 8664
 --- !u!114 &-8765370479769324828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +126,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8071480635087982218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MISC/Announcement 2
+  m_EditorClassIdentifier: 
+  Path: event:/MISC/Announcement 2
+  Guid:
+    Data1: 899005602
+    Data2: 1215495549
+    Data3: 1269385619
+    Data4: -1803943623
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 90
+  Length: 38000
 --- !u!114 &-7735868170035316046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +248,7 @@ MonoBehaviour:
   Name: Surface
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 6
   Default: 0
   ID:
     data1: 4276515589
@@ -206,6 +260,9 @@ MonoBehaviour:
   - Grass
   - Wood
   - Sand
+  - Wall
+  - Leaves
+  - Pavement
   Exists: 1
 --- !u!114 &-7122192710171012577
 MonoBehaviour:
@@ -234,6 +291,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6656408001176648057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Caroussel
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Caroussel
+  Guid:
+    Data1: 1452806730
+    Data2: 1221804142
+    Data3: -1570435398
+    Data4: 1285754705
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15500
 --- !u!114 &-6493256342382736754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +518,7 @@ MonoBehaviour:
   Name: Surface
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 6
   Default: 0
   ID:
     data1: 4276515589
@@ -446,6 +530,9 @@ MonoBehaviour:
   - Grass
   - Wood
   - Sand
+  - Wall
+  - Leaves
+  - Pavement
   Exists: 1
 --- !u!114 &-4105616949208579651
 MonoBehaviour:
@@ -474,6 +561,34 @@ MonoBehaviour:
   MinDistance: 1.2
   MaxDistance: 350
   Length: 125000
+--- !u!114 &-2912176988580812542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMBIENCE/Planetarium
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE/Planetarium
+  Guid:
+    Data1: 1671871992
+    Data2: 1304461512
+    Data3: -1713779584
+    Data4: -119768658
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7777512826492715744}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240000
 --- !u!114 &-2822212548930660361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,6 +616,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2665219075099367739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMBIENCE/Trainstation 1
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE/Trainstation 1
+  Guid:
+    Data1: -255146801
+    Data2: 1217582948
+    Data3: -1703808072
+    Data4: 2025389522
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400000
+--- !u!114 &-2236520538494772809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MISC/Announcement 1
+  m_EditorClassIdentifier: 
+  Path: event:/MISC/Announcement 1
+  Guid:
+    Data1: -758815644
+    Data2: 1270829037
+    Data3: -970787703
+    Data4: -1487506208
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 75
+  Length: 28000
 --- !u!114 &-2159696076895311757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +725,30 @@ MonoBehaviour:
   MinDistance: 1.2
   MaxDistance: 400
   Length: 240000
+--- !u!114 &-1378196563848409405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Splat Edge Glitches/SplatEdge
+  m_EditorClassIdentifier: 
+  Name: SplatEdge
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3508920318
+    data2: 1647185501
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1246148684304467010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +938,17 @@ MonoBehaviour:
   - {fileID: 2155464114456505499}
   - {fileID: -5027546945289612975}
   - {fileID: -896695679355321894}
+  - {fileID: -8842557435448111235}
+  - {fileID: -6656408001176648057}
+  - {fileID: -2236520538494772809}
+  - {fileID: -8071480635087982218}
+  - {fileID: -2665219075099367739}
+  - {fileID: -2912176988580812542}
+  - {fileID: 1797703606193049317}
+  - {fileID: 7555547605218471596}
+  - {fileID: 4640185915340280766}
+  - {fileID: 1708229907860970282}
+  - {fileID: 7294875485573991591}
   EditorParameters:
   - {fileID: 3550930422143102408}
   MasterBanks:
@@ -752,7 +956,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 5602155426736664709}
   cacheVersion: 131860
-  cacheTime: 639253424761226756
+  cacheTime: 639270820247471210
   SerializableEventsDict:
   - key: event:/SPOT/Orb
     index: 0
@@ -826,6 +1030,28 @@ MonoBehaviour:
     index: 34
   - key: event:/AMBIENCE/Basketballfield
     index: 35
+  - key: event:/SPOT/Wolf
+    index: 36
+  - key: event:/SPOT/Caroussel
+    index: 37
+  - key: event:/MISC/Announcement 1
+    index: 38
+  - key: event:/MISC/Announcement 2
+    index: 39
+  - key: event:/AMBIENCE/Trainstation 1
+    index: 40
+  - key: event:/AMBIENCE/Planetarium
+    index: 41
+  - key: event:/AMBIENCE/Trainstation 2
+    index: 42
+  - key: event:/SPOT/Train Portal Blue
+    index: 43
+  - key: snapshot:/Splat Edge
+    index: 44
+  - key: event:/SPLAT/Splat Edge Glitches
+    index: 45
+  - key: event:/SPOT/Trampoline
+    index: 46
 --- !u!114 &352544711309668190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,6 +1130,61 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &1708229907860970282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPLAT/Splat Edge Glitches
+  m_EditorClassIdentifier: 
+  Path: event:/SPLAT/Splat Edge Glitches
+  Guid:
+    Data1: 885394403
+    Data2: 1226210254
+    Data3: 761439919
+    Data4: -32366947
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1378196563848409405}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1797703606193049317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMBIENCE/Trainstation 2
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE/Trainstation 2
+  Guid:
+    Data1: 798461358
+    Data2: 1292346078
+    Data3: 1556911515
+    Data4: 530355403
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 4.8
+  MaxDistance: 60
+  Length: 56662
 --- !u!114 &2155464114456505499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +1232,30 @@ MonoBehaviour:
   ID:
     data1: 2343384287
     data2: 1112320390
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &2317247834187069262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Train Portal Blue/Proximity
+  m_EditorClassIdentifier: 
+  Name: Proximity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 488127647
+    data2: 2609628193
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -1111,6 +1416,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &4640185915340280766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Splat Edge
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Splat Edge
+  Guid:
+    Data1: 1552328765
+    Data2: 1161712610
+    Data3: 137154748
+    Data4: 1820960050
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &5147202786191566325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,10 +1513,10 @@ MonoBehaviour:
   Path: FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639253424761226756
+  lastModified: 639270820247471210
   FileSizes:
   - Name: 
-    Value: 2948
+    Value: 3530
   Exists: 1
 --- !u!114 &5998534105757851273
 MonoBehaviour:
@@ -1292,6 +1624,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 650
   Length: 169777
+--- !u!114 &7294875485573991591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Trampoline
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Trampoline
+  Guid:
+    Data1: 1397095098
+    Data2: 1267466848
+    Data3: -508795991
+    Data4: -1665446088
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25347
 --- !u!114 &7504864535658782609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,6 +1678,58 @@ MonoBehaviour:
   MinDistance: 2.6000001
   MaxDistance: 9.2
   Length: 8000
+--- !u!114 &7555547605218471596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SPOT/Train Portal Blue
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT/Train Portal Blue
+  Guid:
+    Data1: 867183212
+    Data2: 1340017208
+    Data3: -1642669691
+    Data4: 892358099
+  Banks:
+  - {fileID: -8906356230810132259}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2317247834187069262}
+  MinDistance: 1
+  MaxDistance: 45
+  Length: 291322
+--- !u!114 &7777512826492715744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Planetarium/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1622412850
+    data2: 47269866
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7784425568350438366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,7 +1827,7 @@ MonoBehaviour:
   Name: Surface
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 6
   Default: 0
   ID:
     data1: 4276515589
@@ -1428,6 +1839,9 @@ MonoBehaviour:
   - Grass
   - Wood
   - Sand
+  - Wall
+  - Leaves
+  - Pavement
   Exists: 1
 --- !u!114 &9026777266423697181
 MonoBehaviour:

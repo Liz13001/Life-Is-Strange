@@ -2214,7 +2214,7 @@ MonoBehaviour:
     Path: event:/AMBIENCE/Cherry Blossom St 2
   Event: 
   EventPlayTrigger: 1
-  EventStopTrigger: 0
+  EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -3387,7 +3387,7 @@ MonoBehaviour:
     Path: event:/MISC/Bobby Car Stationary
   Event: 
   EventPlayTrigger: 1
-  EventStopTrigger: 0
+  EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -3395,7 +3395,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 0.6
-  OverrideMaxDistance: 9.2
+  OverrideMaxDistance: 20
 --- !u!4 &1506427535
 Transform:
   m_ObjectHideFlags: 0
@@ -4410,7 +4410,7 @@ MonoBehaviour:
     Path: event:/MUSIC/Background
   Event: 
   EventPlayTrigger: 1
-  EventStopTrigger: 0
+  EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

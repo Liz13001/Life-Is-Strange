@@ -10116,7 +10116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: walkSpeed
-      value: 1
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4459864850019384740, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: enableJump
@@ -10201,6 +10201,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8765489994903951809}
+    - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8765489994903951814}
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
 --- !u!1 &8765489994903951805 stripped
 GameObject:
@@ -10226,6 +10229,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1041939210}
   fallbackToCurrentPosition: 1
+--- !u!114 &8765489994903951814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765489994903951805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96662a1bddccd48dd940a37200ed31a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -2040273787
+      Data2: 1147243243
+      Data3: 429779626
+      Data4: 573326700
+    Path: event:/PLAYER/Footsteps
+  jumpEvent:
+    Guid:
+      Data1: -463997873
+      Data2: 1243461163
+      Data3: 1312580496
+      Data4: 1134712461
+    Path: event:/PLAYER/Jump
+  landEvent:
+    Guid:
+      Data1: -488405480
+      Data2: 1091691186
+      Data3: -871985007
+      Data4: -195571353
+    Path: event:/PLAYER/Land
+  walkingBPM: 114
+  sprintingBPM: 180
+  speedThreshold: 0.2
+  sprintSpeedThreshold: 4.5
+  surface: Sand
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

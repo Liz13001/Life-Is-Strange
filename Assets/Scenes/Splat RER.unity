@@ -6011,6 +6011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245865719}
   - component: {fileID: 245865718}
+  - component: {fileID: 245865720}
   m_Layer: 0
   m_Name: Dracula Dog
   m_TagString: Untagged
@@ -6050,13 +6051,44 @@ Transform:
   m_GameObject: {fileID: 245865717}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00006151185, y: -0.71655065, z: -0.000059872815, w: 0.6975351}
-  m_LocalPosition: {x: 7.8013997, y: 0.010133315, z: 4.796257}
+  m_LocalPosition: {x: 7.8013997, y: 0.010133332, z: 4.796257}
   m_LocalScale: {x: 60, y: 60, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1210845515}
   m_Father: {fileID: 1444576138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245865720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245865717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 299403077
+      Data2: 1079820520
+      Data3: -693798515
+      Data4: 569084948
+    Path: event:/SPOT/Wolf
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0.5
+  OverrideMaxDistance: 8
 --- !u!1001 &260017052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6130,6 +6162,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 060a6a7da15e56d4f8d927a22ac15065, type: 3}
+--- !u!1 &278320964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 8765489994903951804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &305887498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7336,6 +7373,7 @@ GameObject:
   - component: {fileID: 1038686252}
   - component: {fileID: 1038686251}
   - component: {fileID: 1038686250}
+  - component: {fileID: 1038686254}
   m_Layer: 6
   m_Name: Train 2
   m_TagString: Untagged
@@ -7433,6 +7471,37 @@ Transform:
   - {fileID: 1796106686}
   m_Father: {fileID: 2044892842}
   m_LocalEulerAnglesHint: {x: 0, y: -8.354, z: -1.552}
+--- !u!114 &1038686254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038686249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 899005602
+      Data2: 1215495549
+      Data3: 1269385619
+      Data4: -1803943623
+    Path: event:/MISC/Announcement 2
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 90
 --- !u!1 &1039352641
 GameObject:
   m_ObjectHideFlags: 0
@@ -7546,6 +7615,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
   m_PrefabInstance: {fileID: 8765489994903951804}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1041939211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278320964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96662a1bddccd48dd940a37200ed31a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepEvent:
+    Guid:
+      Data1: -2040273787
+      Data2: 1147243243
+      Data3: 429779626
+      Data4: 573326700
+    Path: event:/PLAYER/Footsteps
+  jumpEvent:
+    Guid:
+      Data1: -463997873
+      Data2: 1243461163
+      Data3: 1312580496
+      Data4: 1134712461
+    Path: event:/PLAYER/Jump
+  landEvent:
+    Guid:
+      Data1: -488405480
+      Data2: 1091691186
+      Data3: -871985007
+      Data4: -195571353
+    Path: event:/PLAYER/Land
+  walkingBPM: 114
+  sprintingBPM: 180
+  speedThreshold: 0.2
+  sprintSpeedThreshold: 4.5
+  surface: Concrete
 --- !u!1 &1085873378
 GameObject:
   m_ObjectHideFlags: 0
@@ -8623,6 +8730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444576138}
+  - component: {fileID: 1444576139}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -8657,6 +8765,37 @@ Transform:
   - {fileID: 705695743}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1444576139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444576137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &1501372584
 GameObject:
   m_ObjectHideFlags: 0
@@ -9187,6 +9326,7 @@ GameObject:
   - component: {fileID: 1699835156}
   - component: {fileID: 1699835155}
   - component: {fileID: 1699835154}
+  - component: {fileID: 1699835157}
   m_Layer: 6
   m_Name: Train 1
   m_TagString: Untagged
@@ -9284,6 +9424,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699835152}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1699835157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699835152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -758815644
+      Data2: 1270829037
+      Data3: -970787703
+      Data4: -1487506208
+    Path: event:/MISC/Announcement 1
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 300
 --- !u!1 &1708410223
 GameObject:
   m_ObjectHideFlags: 0
@@ -14545,6 +14716,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2044892842}
   m_LocalEulerAnglesHint: {x: 0.038, y: -4.806, z: -1.225}
+--- !u!1 &1945537656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945537658}
+  - component: {fileID: 1945537657}
+  m_Layer: 0
+  m_Name: Trainstation 1 Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1945537657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945537656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -255146801
+      Data2: 1217582948
+      Data3: -1703808072
+      Data4: 2025389522
+    Path: event:/AMBIENCE/Trainstation 1
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1945537658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945537656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.225086, y: 0.63743365, z: 9.640769}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1974651581
 GameObject:
   m_ObjectHideFlags: 0
@@ -15981,7 +16215,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1041939211}
   m_SourcePrefab: {fileID: 100100000, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -15996,3 +16233,4 @@ SceneRoots:
   - {fileID: 650748104}
   - {fileID: 455717134}
   - {fileID: 2146270522}
+  - {fileID: 1945537658}
