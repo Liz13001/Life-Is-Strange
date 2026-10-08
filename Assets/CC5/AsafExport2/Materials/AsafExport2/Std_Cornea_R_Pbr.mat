@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 83a0175bae1509c4d97e420ab04e0d55, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -115,7 +115,7 @@ Material:
     - _UseDepth: 1
     m_Colors:
     - _CornerShadowColor: {r: 0.99999994, g: 0.8741368, b: 0.8553658, a: 1}
-    - _EmissiveColor: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColor: {r: 0.12452829, g: 0.12452829, b: 0.12452829, a: 0}
     - _IrisCloudyColor: {r: 0, g: 0.09985283, b: 0.09985283, a: 1}
     - _IrisColor: {r: 0.65628237, g: 0.54949385, b: 0.45234025, a: 1}
     - _LimbusColor: {r: 0, g: 0, b: 0, a: 1}
